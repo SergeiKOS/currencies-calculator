@@ -1,0 +1,22 @@
+import React from "react";
+import styles from "./Card.module.css";
+
+function Input({ value, onAmountChange, id, name, rate }) {
+  return (
+    <p>
+      <label htmlFor={id} className={styles.label}>
+        {id.toUpperCase()}:
+      </label>
+      <input
+        type="text"
+        id={id}
+        name={name}
+        value={value}
+        onChange={onAmountChange}
+      />
+      <span>Rate: {rate}</span>
+    </p>
+  );
+}
+
+export default Input;
