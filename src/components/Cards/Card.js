@@ -7,7 +7,7 @@ function Card({ USDCAD: { USD, CAD, rates }, onAmountChange }) {
   return (
     <div className={styles.card}>
       <div className={styles.currencyHeader}>USD/CAD</div>
-      <form>
+      <form autoComplete="off">
         <Input
           onAmountChange={onAmountChange}
           id="usd"

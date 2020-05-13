@@ -44,7 +44,7 @@ function Cards() {
     if (ID === "USD") {
       USDCADCopy.CAD = (value * USDCAD.rates.CAD).toFixed(2);
     } else if (ID === "CAD") {
-      USDCADCopy.USD = (value * USDCAD.rates.USD).toFixed(2);
+      USDCADCopy.USD = (value / USDCAD.rates.CAD).toFixed(2);
     }
 
     setUSDCAD({ ...USDCADCopy, [ID]: +value });
