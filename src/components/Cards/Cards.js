@@ -5,26 +5,26 @@ import { fetchUSDCADRate } from "../../api";
 
 function Cards() {
   const [USDCAD, setUSDCAD] = useState({
-    USD: "",
+    USD: "1",
     CAD: "",
-    rates: { CAD: "", USD: "" },
+    rates: { CAD: "", USD: 1 },
   });
 
   useEffect(() => {
     const fetchAPI = async () => {
       let {
         data: {
-          rates: { USD, CAD },
+          rates: { CAD },
         },
       } = await fetchUSDCADRate();
 
-      CAD = CAD.toFixed(2);
+      CAD = CAD.toFixed(2); 
 
-      setUSDCAD({
-        USD,
-        CAD,
-        rates: { USD, CAD },
-      });
+      const USDCADCopy = { ...USDCAD };
+      USDCADCopy.CAD = CAD;
+      USDCADCopy.rates.CAD = CAD;
+
+      setUSDCAD(USDCADCopy);
     };
     fetchAPI();
   }, []);
