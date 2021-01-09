@@ -1,6 +1,8 @@
 import styles from "./Card.module.css";
 
-function Input({ value, onAmountChange, id, name, rate }) {
+interface 
+
+const Input:React.FC<IInput> = ({ value, onAmountChange, id, name, rate }) => {
   return (
     <p>
       <label htmlFor={id} className={styles.label}>
