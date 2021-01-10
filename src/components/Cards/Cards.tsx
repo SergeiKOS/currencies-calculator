@@ -3,7 +3,7 @@ import styles from "./Cards.module.css";
 import Card from "./Card";
 import { fetchUSDCADRate } from "../../api";
 
-function Cards() {
+const Cards:React.FC = () => {
   const [USDCAD, setUSDCAD] = useState({
     USD: "1",
     CAD: "",
@@ -13,6 +13,7 @@ function Cards() {
   useEffect(() => {
     const fetchAPI = async () => {
       let {
+        //@ts-ignore
         data: {
           rates: { CAD },
         },
@@ -29,7 +30,7 @@ function Cards() {
     fetchAPI();
   }, []);
 
-  const handleAmountChange = (e) => {
+  const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     let { value, id } = e.target;
 
     if (value !== "") {

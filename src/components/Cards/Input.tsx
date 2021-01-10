@@ -1,6 +1,12 @@
 import styles from "./Card.module.css";
 
-interface 
+interface IInput {
+  value: string;
+  onAmountChange(e: React.ChangeEvent<HTMLInputElement>): void;
+  id: string;
+  name: string;
+  rate: string
+}
 
 const Input:React.FC<IInput> = ({ value, onAmountChange, id, name, rate }) => {
   return (
