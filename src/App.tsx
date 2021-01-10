@@ -1,4 +1,4 @@
-import Cards from "./components/Cards/Cards";
+import Cards from "./components/Cards/Cards.js";
 import styles from "./App.module.css";
 
 const App:React.FC = () => {
