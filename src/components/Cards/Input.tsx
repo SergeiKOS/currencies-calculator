@@ -2,13 +2,13 @@ import styles from "./Card.module.css";
 
 interface IInput {
   value: string;
-  onAmountChange(e: React.ChangeEvent<HTMLInputElement>): void;
+  onChange(e: React.ChangeEvent<HTMLInputElement>): void;
   id: string;
   name: string;
-  rate: string
+  rate: string;
 }
 
-const Input:React.FC<IInput> = ({ value, onAmountChange, id, name, rate }) => {
+const Input: React.FC<IInput> = ({ value, onChange, id, name, rate }) => {
   return (
     <p>
       <label htmlFor={id} className={styles.label}>
@@ -19,11 +19,11 @@ const Input:React.FC<IInput> = ({ value, onAmountChange, id, name, rate }) => {
         id={id}
         name={name}
         value={value}
-        onChange={onAmountChange}
+        onChange={onChange}
       />
       <span>Rate: {rate}</span>
     </p>
   );
-}
+};
 
 export default Input;
