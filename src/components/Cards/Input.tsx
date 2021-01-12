@@ -5,7 +5,7 @@ interface IInput {
   onChange(e: React.ChangeEvent<HTMLInputElement>): void;
   id: string;
   name: string;
-  rate: string;
+  rate?: string;
 }
 
 const Input: React.FC<IInput> = ({ value, onChange, id, name, rate }) => {
@@ -21,7 +21,7 @@ const Input: React.FC<IInput> = ({ value, onChange, id, name, rate }) => {
         value={value}
         onChange={onChange}
       />
-      <span>Rate: {rate}</span>
+      {rate && <span>Rate: {rate}</span>}
     </p>
   );
 };

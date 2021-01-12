@@ -40,7 +40,6 @@ const Card = ({ currencyRates, baseCurrency }) => {
           id={baseCurrency}
           name={currencyRates[0]}
           value={baseCurrencyUserValue}
-          rate={1}
         />
         <Input
           onChange={handleTargetChange}
