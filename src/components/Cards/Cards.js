@@ -1,60 +1,33 @@
 import { useState, useEffect } from "react";
 import styles from "./Cards.module.css";
 import Card from "./Card";
-import { fetchUSDCADRate } from "../../api";
+import { fetchRates } from "../../api";
 
-function Cards() {
-  const [USDCAD, setUSDCAD] = useState({
-    USD: "1",
-    CAD: "",
-    rates: { CAD: "", USD: 1 },
-  });
+const Cards = () => {
+  const [currencyRates, setCurrencyRates] = useState([]);
+  const [baseCurrency, setBaseCurrency] = useState("USD");
 
   useEffect(() => {
     const fetchAPI = async () => {
       let {
-        data: {
-          rates: { CAD },
-        },
-      } = await fetchUSDCADRate();
+        data: { rates },
+      } = await fetchRates(baseCurrency);
 
-      CAD = CAD.toFixed(2); 
+      rates = Object.entries(rates);
+      rates = rates.map((rate) => ({ ...rate }));
 
-      const USDCADCopy = { ...USDCAD };
-      USDCADCopy.CAD = CAD;
-      USDCADCopy.rates.CAD = CAD;
-
-      setUSDCAD(USDCADCopy);
+      setCurrencyRates(rates);
     };
     fetchAPI();
   }, []);
 
-  const handleAmountChange = (e) => {
-    let { value, id } = e.target;
-
-    if (value !== "") {
-      value = parseFloat(value, 10);
-      if (isNaN(value)) {
-        return null;
-      }
-    }
-    const ID = id.toUpperCase();
-
-    let USDCADCopy = { ...USDCAD };
-    if (ID === "USD") {
-      USDCADCopy.CAD = (value * USDCAD.rates.CAD).toFixed(2);
-    } else if (ID === "CAD") {
-      USDCADCopy.USD = (value / USDCAD.rates.CAD).toFixed(2);
-    }
-
-    setUSDCAD({ ...USDCADCopy, [ID]: +value });
-  };
-
   return (
     <div className={styles.cards}>
-      <Card USDCAD={USDCAD} onAmountChange={handleAmountChange} />
+      {currencyRates.map((rate) => (
+        <Card currencyRates={rate} baseCurrency={baseCurrency} />
+      ))}
     </div>
   );
-}
+};
 
 export default Cards;
