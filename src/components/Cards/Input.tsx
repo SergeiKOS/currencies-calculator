@@ -15,7 +15,7 @@ const Input: React.FC<IInput> = ({ value, onChange, id, name, rate }) => {
         {id.toUpperCase()}:
       </label>
       <input
-        type="text"
+        type="number"
         id={id}
         name={name}
         value={value}

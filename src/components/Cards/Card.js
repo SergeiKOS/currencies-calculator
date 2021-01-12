@@ -17,27 +17,18 @@ import Input from "./Input";
 // : React.FC<ICard>
 const Card = ({ currencyRates, baseCurrency }) => {
   const [baseCurrencyUserValue, setBaseCurrencyUserValue] = useState(1);
-  // const [targetCurrencyUserValue, setTargetCurrencyUserValue] = useState(
-  //   baseCurrencyUserValue * currencyRates[1]
-  // );
-
-  // const handleAmountChange = (e) => {
-  //   let { value, id } = e.target;
-  //   if (value !== "") {
-  //     value = parseFloat(value, 10);
-  //     if (isNaN(value)) {
-  //       return null;
-  //     }
-  //   }
-  // };
+  const [targetCurrencyUserValue, setTargetCurrencyUserValue] = useState(
+    currencyRates[1].toFixed(2)
+  );
 
   const handleBaseChange = (e) => {
     setBaseCurrencyUserValue(e.target.value);
+    setTargetCurrencyUserValue((e.target.value * currencyRates[1]).toFixed(2));
   };
 
   const handleTargetChange = (e) => {
+    setTargetCurrencyUserValue(e.target.value);
     setBaseCurrencyUserValue((e.target.value / currencyRates[1]).toFixed(2));
-    // setBaseCurrencyUserValue(e.target.value * baseCurrencyUserValue);
   };
 
   return (
@@ -57,7 +48,7 @@ const Card = ({ currencyRates, baseCurrency }) => {
           onChange={handleTargetChange}
           id={currencyRates[0]}
           name={baseCurrency}
-          value={(currencyRates[1] * baseCurrencyUserValue).toFixed(2)}
+          value={targetCurrencyUserValue}
           rate={currencyRates[1].toFixed(2)}
         />
       </form>
