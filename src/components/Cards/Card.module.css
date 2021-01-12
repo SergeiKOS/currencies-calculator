@@ -1,14 +1,11 @@
 .card {
   border: 1px solid lightgray;
-  width: 310px;
   padding: 10px;
-  min-height: 150px;
-  margin-right: 10px;
   margin-bottom: 40px;
+  width: 290px;
 }
 .currencyHeader {
   text-align: center;
-  
 }
 
 .label {
@@ -21,4 +18,5 @@ input {
   padding: 5px;
   font-size: 14px;
   margin-right: 10px;
+  width: 130px;
 }

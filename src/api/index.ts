@@ -10,6 +10,6 @@ export const fetchRates = async (base: string) => {
   try {
     return await axios.get(changeableUrl);
   } catch (error) {
-    console.log(error);
+    alert(error);
   }
 };

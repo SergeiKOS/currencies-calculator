@@ -17,9 +17,7 @@ import Input from "./Input";
 // : React.FC<ICard>
 const Card = ({ currencyRates, baseCurrency }) => {
   const [baseCurrencyUserValue, setBaseCurrencyUserValue] = useState(1);
-  const [targetCurrencyUserValue, setTargetCurrencyUserValue] = useState(
-    currencyRates[1].toFixed(2)
-  );
+  const [targetCurrencyUserValue, setTargetCurrencyUserValue] = useState();
 
   const handleBaseChange = (e) => {
     setBaseCurrencyUserValue(e.target.value);
@@ -48,7 +46,7 @@ const Card = ({ currencyRates, baseCurrency }) => {
           onChange={handleTargetChange}
           id={currencyRates[0]}
           name={baseCurrency}
-          value={targetCurrencyUserValue}
+          value={targetCurrencyUserValue || currencyRates[1].toFixed(2)}
           rate={currencyRates[1].toFixed(2)}
         />
       </form>
