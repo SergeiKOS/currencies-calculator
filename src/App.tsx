@@ -1,6 +1,7 @@
 import { useState } from "react";
 import BaseCurrenciesContext from "./context/BaseCurrenciesContext";
-import Cards from "./components/Cards/Cards.js";
+import UIToggle from "./components/uiToggle/UIToggle";
+import Cards from "./components/cards/Cards.js";
 import BaseCurrencies from "./components/baseCurrencies/BaseCurrencies";
 import styles from "./App.module.css";
 
@@ -13,8 +14,15 @@ const App: React.FC = () => {
     <BaseCurrenciesContext.Provider
       value={{ allRates, baseCurrency, setBaseCurrency }}
     >
-      <header>
+      <header
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
         <BaseCurrencies />
+        <UIToggle />
       </header>
       <div className={styles.container}>
         <Cards />
