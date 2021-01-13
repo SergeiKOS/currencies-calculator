@@ -20,6 +20,7 @@ const App: React.FC = () => {
           justifyContent: "space-between",
           alignItems: "center",
         }}
+        className={styles.container}
       >
         <BaseCurrencies />
         <UIToggle />
