@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useContext } from "react";
+import BaseCurrenciesContext from "../../context/BaseCurrenciesContext";
 import styles from "./Card.module.css";
 import Input from "./Input";
 
@@ -15,7 +17,8 @@ import Input from "./Input";
 // }
 
 // : React.FC<ICard>
-const Card = ({ currencyRates, baseCurrency }) => {
+const Card = ({ currencyRates }) => {
+  const { baseCurrency } = useContext(BaseCurrenciesContext);
   const [baseCurrencyUserValue, setBaseCurrencyUserValue] = useState(1);
   const [targetCurrencyUserValue, setTargetCurrencyUserValue] = useState();
 
