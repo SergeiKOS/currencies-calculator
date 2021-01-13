@@ -23,7 +23,7 @@ const CurrenciesList = () => {
       />
       <ul>
         {currencyData.map((currency) => (
-          <li key={currency}>
+          <li key={currency[0]}>
             <CurrencyItem
               currency={currency}
               baseCurrencyUserValue={baseCurrencyUserValue}

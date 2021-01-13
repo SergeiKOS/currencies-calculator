@@ -3,7 +3,7 @@ const CurrencyItem = ({ currency, baseCurrencyUserValue }) => {
   return (
     <>
       <span>{currency[0]}:</span>
-      <span>{baseCurrencyUserValue * currencyRate}</span>
+      <span>{(baseCurrencyUserValue * currencyRate).toFixed(2)}</span>
       <span>Rate: {currencyRate}</span>
     </>
   );
