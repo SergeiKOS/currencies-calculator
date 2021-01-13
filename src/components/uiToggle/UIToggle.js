@@ -19,7 +19,6 @@ const UIToggle = () => {
       style={{
         display: "flex",
         justifyContent: "space-between",
-        width: "70px",
       }}
     >
       <button

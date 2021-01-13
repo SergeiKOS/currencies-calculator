@@ -11,7 +11,7 @@ const App = () => {
   const [baseCurrency, setBaseCurrency] = useState("USD");
   const allRates = ["AUD", "CAD", "EUR", "GBP", "JPY", "RUB", "USD"];
   const [UI, setUI] = useState("grid");
-  const [currencyRates, setCurrencyRates] = useState([]);
+  const [currencyData, setCurrencyData] = useState([]);
 
   useEffect(() => {
     const fetchAPI = async () => {
@@ -21,8 +21,7 @@ const App = () => {
 
       rates = Object.entries(rates);
       rates = rates.map((rate) => ({ ...rate }));
-      console.log(rates);
-      setCurrencyRates(rates);
+      setCurrencyData(rates);
     };
     fetchAPI();
   }, [baseCurrency]);
@@ -41,8 +40,8 @@ const App = () => {
         baseCurrency,
         setBaseCurrency,
         allRates,
-        currencyRates,
-        setCurrencyRates,
+        currencyData,
+        setCurrencyData,
         UI,
         setUI,
       }}

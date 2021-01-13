@@ -1,4 +1,4 @@
-import styles from "./Card.module.css";
+import styles from "./Input.module.css";
 
 interface IInput {
   value: string;
@@ -11,10 +11,11 @@ interface IInput {
 const Input: React.FC<IInput> = ({ value, onChange, id, name, rate }) => {
   return (
     <p>
-      <label htmlFor={id} className={styles.label}>
+      <label className={styles.label} htmlFor={id}>
         {id.toUpperCase()}:
       </label>
       <input
+        className={styles.input}
         type="number"
         id={id}
         name={name}

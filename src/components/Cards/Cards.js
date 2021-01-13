@@ -4,12 +4,12 @@ import styles from "./Cards.module.css";
 import Card from "./Card";
 
 const Cards = () => {
-  const { currencyRates } = useContext(BaseCurrenciesContext);
+  const { currencyData } = useContext(BaseCurrenciesContext);
 
   return (
     <div className={styles.cards}>
-      {currencyRates.map((rate) => (
-        <Card currencyRates={rate} key={rate[0]} />
+      {currencyData.map((currencyData) => (
+        <Card currencyData={currencyData} key={currencyData[0]} />
       ))}
     </div>
   );

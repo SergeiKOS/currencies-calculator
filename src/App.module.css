@@ -12,6 +12,10 @@ ul {
   padding: 0;
 }
 
+p {
+  margin: 0;
+}
+
 .container {
   color: lightgray;
   max-width: 976px;
