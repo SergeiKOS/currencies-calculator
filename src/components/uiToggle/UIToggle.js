@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import BaseCurrenciesContext from "../../context/BaseCurrenciesContext";
+import styles from "./UIToggle.module.css";
 import { BsGrid3X2, BsListTask } from "react-icons/bs";
 import SvgIcon from "../SvgIcon";
 
@@ -15,12 +16,7 @@ const UIToggle = () => {
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-      }}
-    >
+    <div className={styles.buttonWrapper}>
       <button
         onClick={toggleUI}
         aria-label="Toggle currencies grid"

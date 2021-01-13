@@ -12,6 +12,7 @@ const CurrencyBase = ({
       id={baseCurrency}
       name={currencyData[0]}
       value={baseCurrencyUserValue}
+      currency={baseCurrency}
     />
   );
 };

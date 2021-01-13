@@ -5,7 +5,8 @@ import UIToggle from "./components/uiToggle/UIToggle";
 import Cards from "./components/cards/Cards";
 import CurrenciesList from "./components/currenciesList/CurrenciesList";
 import BaseCurrencies from "./components/baseCurrencies/BaseCurrencies";
-import styles from "./App.module.css";
+import "./globalStyles/scaffolding.css";
+import "./globalStyles/variables.css";
 
 const App = () => {
   const [baseCurrency, setBaseCurrency] = useState("USD");
@@ -52,12 +53,12 @@ const App = () => {
           justifyContent: "space-between",
           alignItems: "center",
         }}
-        className={styles.container}
+        className="container"
       >
         <BaseCurrencies />
         <UIToggle />
       </header>
-      <div className={styles.container}>{getUI()}</div>
+      <div className="container">{getUI()}</div>
     </BaseCurrenciesContext.Provider>
   );
 };

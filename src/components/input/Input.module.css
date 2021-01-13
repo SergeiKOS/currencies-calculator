@@ -3,10 +3,12 @@
 }
 
 .input {
-  background-color: lightgray;
-  border: none;
+  background-color: #18202b;
+  color: lightgray;
+  border: 1px solid var(--light-line);
   padding: 5px;
   font-size: 14px;
   margin-right: 10px;
+  margin-bottom: 10px;
   width: 130px;
 }

@@ -20,18 +20,22 @@ import Input from "../input/Input";
 const Card = ({ currencyData }) => {
   const { baseCurrency } = useContext(BaseCurrenciesContext);
   const [baseCurrencyUserValue, setBaseCurrencyUserValue] = useState(1);
-  const [targetCurrencyUserValue, setTargetCurrencyUserValue] = useState();
+  const [targetCurrencyUserValue, setTargetCurrencyUserValue] = useState(
+    currencyData[1].toFixed(4)
+  );
 
   const currencyRate = currencyData[1].toFixed(4);
 
   const handleBaseChange = (e) => {
-    setBaseCurrencyUserValue(e.target.value);
-    setTargetCurrencyUserValue(e.target.value * currencyRate);
+    const { value } = e.target;
+    setBaseCurrencyUserValue(value);
+    setTargetCurrencyUserValue((value * currencyRate).toFixed(2));
   };
 
   const handleTargetChange = (e) => {
-    setTargetCurrencyUserValue(e.target.value);
-    setBaseCurrencyUserValue(e.target.value / currencyRate);
+    const { value } = e.target;
+    setTargetCurrencyUserValue(value);
+    setBaseCurrencyUserValue((value / currencyRate).toFixed(2));
   };
 
   return (
@@ -42,15 +46,17 @@ const Card = ({ currencyData }) => {
       <form autoComplete="off">
         <Input
           onChange={handleBaseChange}
-          id={baseCurrency}
+          id={`${baseCurrency}${currencyRate}`}
+          currency={baseCurrency}
           name={currencyData[0]}
           value={baseCurrencyUserValue}
         />
         <Input
           onChange={handleTargetChange}
-          id={currencyData[0]}
+          id={`${currencyRate}`}
+          currency={currencyData[0]}
           name={baseCurrency}
-          value={targetCurrencyUserValue || currencyRate}
+          value={targetCurrencyUserValue}
           rate={currencyRate}
         />
       </form>

@@ -1,5 +1,5 @@
 body {
-  background-color: #121212;
+  background-color: #18202b;
   font-family: "Roboto", sans-serif;
 }
 input,
@@ -18,7 +18,7 @@ p {
 
 .container {
   color: lightgray;
-  max-width: 976px;
+  max-width: 934px;
   margin-left: auto;
   margin-right: auto;
   padding-top: 40px;
