@@ -20,7 +20,7 @@ const App = () => {
       let {
         data: { rates },
       } = await fetchRates(baseCurrency);
-
+      console.log("request");
       rates = Object.entries(rates);
       rates = rates.map((rate) => ({ ...rate }));
       setCurrencyData(rates);

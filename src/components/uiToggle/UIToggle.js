@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import BaseCurrenciesContext from "../../context/BaseCurrenciesContext";
 import styles from "./UIToggle.module.css";
 import { BsGrid3X2, BsListTask } from "react-icons/bs";
@@ -6,11 +6,23 @@ import SvgIcon from "../SvgIcon";
 
 const UIToggle = () => {
   const { UI, setUI } = useContext(BaseCurrenciesContext);
+  const [isDisabled, setIsDisabled] = useState({
+    grid: true,
+    list: false,
+  });
 
   const toggleUI = () => {
     if (UI === "grid") {
+      setIsDisabled({
+        grid: true,
+        list: false,
+      });
       setUI("list");
     } else if (UI === "list") {
+      setIsDisabled({
+        grid: false,
+        list: true,
+      });
       setUI("grid");
     }
   };
@@ -22,6 +34,7 @@ const UIToggle = () => {
         className={styles.btn}
         aria-label="Toggle currencies grid"
         type="button"
+        disabled={isDisabled.grid}
       >
         <SvgIcon color="white" size="30px">
           <BsGrid3X2 />
@@ -32,6 +45,7 @@ const UIToggle = () => {
         className={styles.btn}
         aria-label="Toggle currencies list"
         type="button"
+        disabled={isDisabled.list}
       >
         <SvgIcon color="white" size="30px">
           <BsListTask />

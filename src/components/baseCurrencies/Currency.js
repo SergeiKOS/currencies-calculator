@@ -2,13 +2,20 @@ import { useContext } from "react";
 import BaseCurrenciesContext from "../../context/BaseCurrenciesContext";
 import styles from "./Currency.module.css";
 
-const Currency = ({ currency }) => {
+const Currency = ({ currency, onBtnDisable, isDisabled }) => {
   const { setBaseCurrency } = useContext(BaseCurrenciesContext);
+
+  const handleClick = (e) => {
+    const { innerText } = e.target;
+    setBaseCurrency(innerText);
+    onBtnDisable(innerText);
+  };
 
   return (
     <button
-      onClick={(e) => setBaseCurrency(e.target.innerText)}
+      onClick={handleClick}
       className={styles.btn}
+      disabled={isDisabled}
       type="button"
     >
       {currency}

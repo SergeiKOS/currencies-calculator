@@ -22,3 +22,8 @@
   outline: none;
   background-color: #28313e;
 }
+
+.btn:disabled {
+  background-color: #3c4552;
+  cursor: auto;
+}
