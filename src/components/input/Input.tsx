@@ -6,17 +6,9 @@ interface IInput {
   id: string;
   currency: string;
   name: string;
-  rate?: string;
 }
 
-const Input: React.FC<IInput> = ({
-  value,
-  onChange,
-  id,
-  currency,
-  name,
-  rate,
-}) => {
+const Input: React.FC<IInput> = ({ value, onChange, id, currency, name }) => {
   return (
     <>
       <p className={styles.inputWrapper}>
@@ -32,7 +24,6 @@ const Input: React.FC<IInput> = ({
           onChange={onChange}
         />
       </p>
-      {rate && <span>Rate: {rate}</span>}
     </>
   );
 };

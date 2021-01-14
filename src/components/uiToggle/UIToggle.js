@@ -11,17 +11,19 @@ const UIToggle = () => {
     list: false,
   });
 
+  console.log(UI);
+
   const toggleUI = () => {
     if (UI === "grid") {
       setIsDisabled({
-        grid: true,
-        list: false,
+        grid: false,
+        list: true,
       });
       setUI("list");
     } else if (UI === "list") {
       setIsDisabled({
-        grid: false,
-        list: true,
+        grid: true,
+        list: false,
       });
       setUI("grid");
     }
