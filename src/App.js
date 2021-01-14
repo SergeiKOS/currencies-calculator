@@ -20,7 +20,7 @@ const App = () => {
       let {
         data: { rates },
       } = await fetchRates(baseCurrency);
-      console.log("request");
+
       rates = Object.entries(rates);
       rates = rates.map((rate) => ({ ...rate }));
       setCurrencyData(rates);
@@ -29,11 +29,8 @@ const App = () => {
   }, [baseCurrency]);
 
   const getUI = () => {
-    if (UI === "grid") {
-      return <Cards />;
-    } else if (UI === "list") {
-      return <CurrenciesList />;
-    }
+    if (UI === "grid") return <Cards />;
+    else if (UI === "list") return <CurrenciesList />;
   };
 
   return (
