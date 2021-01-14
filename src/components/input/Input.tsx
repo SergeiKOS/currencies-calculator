@@ -19,12 +19,7 @@ const Input: React.FC<IInput> = ({
 }) => {
   return (
     <>
-      <p
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-        }}
-      >
+      <p className={styles.inputWrapper}>
         <label className={styles.label} htmlFor={id}>
           {currency.toUpperCase()}:
         </label>

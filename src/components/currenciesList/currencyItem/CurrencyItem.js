@@ -1,5 +1,6 @@
 const CurrencyItem = ({ currency, baseCurrencyUserValue }) => {
   const currencyRate = currency[1].toFixed(4);
+
   return (
     <>
       <td>{currency[0]}</td>

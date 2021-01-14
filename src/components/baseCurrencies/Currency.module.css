@@ -1,16 +1,9 @@
-.buttonWrapper {
-  display: flex;
-  justify-content: space-between;
-  gap: 5px;
-}
-
 .btn {
   background-color: transparent;
   border: 1px solid var(--light-line);
   border-radius: 10px;
-  padding-top: 4px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 10px 20px 10px 20px;
+  color: lightgray;
   cursor: pointer;
 }
 

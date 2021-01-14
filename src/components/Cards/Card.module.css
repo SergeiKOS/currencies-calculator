@@ -2,6 +2,7 @@
   border: 1px solid lightgray;
   padding: 10px;
   margin-bottom: 40px;
+  border-radius: 10px;
 }
 .currencyHeader {
   text-align: center;

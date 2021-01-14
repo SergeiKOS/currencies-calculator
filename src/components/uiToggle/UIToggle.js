@@ -19,6 +19,7 @@ const UIToggle = () => {
     <div className={styles.buttonWrapper}>
       <button
         onClick={toggleUI}
+        className={styles.btn}
         aria-label="Toggle currencies grid"
         type="button"
       >
@@ -28,6 +29,7 @@ const UIToggle = () => {
       </button>
       <button
         onClick={toggleUI}
+        className={styles.btn}
         aria-label="Toggle currencies list"
         type="button"
       >

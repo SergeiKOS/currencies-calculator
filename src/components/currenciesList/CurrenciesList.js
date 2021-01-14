@@ -10,7 +10,6 @@ const CurrenciesList = () => {
 
   const handleBaseChange = (e) => {
     setBaseCurrencyUserValue(e.target.value);
-    // setTargetCurrencyUserValue((e.target.value * currencyData[1]).toFixed(2));
   };
 
   return (
