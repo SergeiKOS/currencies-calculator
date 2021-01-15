@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import BaseCurrenciesContext from "../../context/BaseCurrenciesContext";
-import CurrencyBase from "./currencyBase/CurrencyBase";
+import CurrencyBaseForList from "./currencyBaseForList/CurrencyBaseForList";
 import CurrencyItem from "./currencyItem/CurrencyItem";
 import styles from "./CurrenciesList.module.css";
 
@@ -14,7 +14,7 @@ const CurrenciesList = () => {
 
   return (
     <div className={styles.currenciesListWrapper}>
-      <CurrencyBase
+      <CurrencyBaseForList
         onBaseChange={handleBaseChange}
         baseCurrency={baseCurrency}
         currencyData={currencyData}

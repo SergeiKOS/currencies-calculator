@@ -5,10 +5,9 @@ interface IInput {
   onChange(e: React.ChangeEvent<HTMLInputElement>): void;
   id: string;
   currency: string;
-  name: string;
 }
 
-const Input: React.FC<IInput> = ({ value, onChange, id, currency, name }) => {
+const Input: React.FC<IInput> = ({ value, onChange, id, currency }) => {
   return (
     <>
       <p className={styles.inputWrapper}>
@@ -19,7 +18,6 @@ const Input: React.FC<IInput> = ({ value, onChange, id, currency, name }) => {
           className={styles.input}
           type="number"
           id={id}
-          name={name}
           value={value}
           onChange={onChange}
         />

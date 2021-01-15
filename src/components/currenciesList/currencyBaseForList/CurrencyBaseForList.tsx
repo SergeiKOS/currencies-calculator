@@ -1,20 +1,24 @@
 import Input from "../../input/Input";
 
-const CurrencyBase = ({
+interface ICurrencyBaseForList {
+  onBaseChange(): void;
+  baseCurrency: string;
+  baseCurrencyUserValue: string;
+}
+
+const CurrencyBaseForList: React.FC<ICurrencyBaseForList> = ({
   onBaseChange,
   baseCurrency,
-  currencyData,
   baseCurrencyUserValue,
 }) => {
   return (
     <Input
       onChange={onBaseChange}
       id={baseCurrency}
-      name={currencyData[0]}
       value={baseCurrencyUserValue}
       currency={baseCurrency}
     />
   );
 };
 
-export default CurrencyBase;
+export default CurrencyBaseForList;

@@ -42,14 +42,12 @@ const Card: React.FC<ICard> = ({ currencyData }) => {
           onChange={handleBaseChange}
           id={`${baseCurrency}${currencyRate}`}
           currency={baseCurrency}
-          name={currencyData[0]}
           value={baseCurrencyUserValue}
         />
         <Input
           onChange={handleTargetChange}
           id={`${currencyRate}`}
           currency={currencyData[0]}
-          name={baseCurrency}
           value={targetCurrencyUserValue}
         />
       </form>
