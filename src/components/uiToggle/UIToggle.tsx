@@ -4,7 +4,7 @@ import styles from "./UIToggle.module.css";
 import { BsGrid3X2, BsListTask } from "react-icons/bs";
 import SvgIcon from "../SvgIcon";
 
-const UIToggle: React.FC = () => {
+const UIToggle = () => {
   const { UI, setUI } = useContext(BaseCurrenciesContext);
   const [isDisabled, setIsDisabled] = useState({
     grid: true,

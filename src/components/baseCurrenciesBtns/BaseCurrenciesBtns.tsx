@@ -3,7 +3,7 @@ import BaseCurrenciesContext from "../../context/BaseCurrenciesContext";
 import styles from "./BaseCurrenciesBtns.module.css";
 import CurrencyBtn from "./CurrencyBtn";
 
-const BaseCurrenciesBtns: React.FC = () => {
+const BaseCurrenciesBtns = () => {
   const { allRates } = useContext(BaseCurrenciesContext);
   const [isDisabled, setIsDisabled] = useState({
     currency: "USD",

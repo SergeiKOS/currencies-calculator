@@ -4,7 +4,7 @@ import CurrencyBaseForList from "./currencyBaseForList/CurrencyBaseForList";
 import CurrencyItem from "./currencyItem/CurrencyItem";
 import styles from "./CurrenciesList.module.css";
 
-const CurrenciesList: React.FC = () => {
+const CurrenciesList = () => {
   const { baseCurrency, currencyData } = useContext(BaseCurrenciesContext);
   const [baseCurrencyUserValue, setBaseCurrencyUserValue] = useState("1");
 
