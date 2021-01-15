@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useContext } from "react";
 import BaseCurrenciesContext from "../../context/BaseCurrenciesContext";
 import styles from "./Card.module.css";
@@ -7,16 +7,21 @@ import Input from "../input/Input";
 interface ICard {
   currencyData: {
     0: string;
-    1: number;
+    1: any;
   };
 }
 
 const Card: React.FC<ICard> = ({ currencyData }) => {
   const { baseCurrency } = useContext(BaseCurrenciesContext);
-  const [baseCurrencyUserValue, setBaseCurrencyUserValue] = useState("1");
-  const [targetCurrencyUserValue, setTargetCurrencyUserValue] = useState(
-    currencyData[1].toFixed(4)
+  const [baseCurrencyUserValue, setBaseCurrencyUserValue]: any = useState("1");
+  const [targetCurrencyUserValue, setTargetCurrencyUserValue]: any = useState(
+    ""
   );
+  useEffect(() => {
+    setTargetCurrencyUserValue(
+      (baseCurrencyUserValue * currencyRate).toFixed(2)
+    );
+  }, [currencyData]);
 
   const currencyRate: any = currencyData[1].toFixed(4);
 

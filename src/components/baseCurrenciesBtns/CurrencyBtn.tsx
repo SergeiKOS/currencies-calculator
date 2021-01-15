@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import BaseCurrenciesContext from "../../context/BaseCurrenciesContext";
-import styles from "./Currency.module.css";
+import styles from "./CurrencyBtn.module.css";
 
 interface ICurrency {
   currency: string;
@@ -8,7 +8,7 @@ interface ICurrency {
   isDisabled: boolean;
 }
 
-const Currency: React.FC<ICurrency> = ({
+const CurrencyBtn: React.FC<ICurrency> = ({
   currency,
   onBtnDisable,
   isDisabled,
@@ -34,4 +34,4 @@ const Currency: React.FC<ICurrency> = ({
   );
 };
 
-export default Currency;
+export default CurrencyBtn;

@@ -4,7 +4,7 @@ import { fetchRates } from "./api";
 import UIToggle from "./components/uiToggle/UIToggle";
 import Cards from "./components/cards/Cards";
 import CurrenciesList from "./components/currenciesList/CurrenciesList";
-import BaseCurrencies from "./components/baseCurrencies/BaseCurrencies";
+import BaseCurrenciesBtns from "./components/baseCurrenciesBtns/BaseCurrenciesBtns";
 import styles from "./App.module.css";
 import "./globalStyles/scaffolding.css";
 import "./globalStyles/variables.css";
@@ -46,7 +46,7 @@ const App = () => {
       }}
     >
       <header className={`container ${styles.header}`}>
-        <BaseCurrencies />
+        <BaseCurrenciesBtns />
         <UIToggle />
       </header>
       <div className="container">{getUI()}</div>

@@ -1,9 +1,9 @@
 import { useContext, useState } from "react";
 import BaseCurrenciesContext from "../../context/BaseCurrenciesContext";
-import styles from "./BaseCurrencies.module.css";
-import Currency from "./Currency";
+import styles from "./BaseCurrenciesBtns.module.css";
+import CurrencyBtn from "./CurrencyBtn";
 
-const BaseCurrencies: React.FC = () => {
+const BaseCurrenciesBtns: React.FC = () => {
   const { allRates } = useContext(BaseCurrenciesContext);
   const [isDisabled, setIsDisabled] = useState({
     currency: "USD",
@@ -18,7 +18,7 @@ const BaseCurrencies: React.FC = () => {
     <ul className={styles.baseCurrenciesList}>
       {allRates.map((currency: string) => (
         <li key={currency}>
-          <Currency
+          <CurrencyBtn
             currency={currency}
             onBtnDisable={handleBtnDisable}
             isDisabled={isDisabled.currency === currency}
@@ -29,4 +29,4 @@ const BaseCurrencies: React.FC = () => {
   );
 };
 
-export default BaseCurrencies;
+export default BaseCurrenciesBtns;
