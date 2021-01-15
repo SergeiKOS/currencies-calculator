@@ -2,11 +2,22 @@ import { useContext } from "react";
 import BaseCurrenciesContext from "../../context/BaseCurrenciesContext";
 import styles from "./Currency.module.css";
 
-const Currency = ({ currency, onBtnDisable, isDisabled }) => {
+interface ICurrency {
+  currency: string;
+  onBtnDisable(title: string): void;
+  isDisabled: boolean;
+}
+
+const Currency: React.FC<ICurrency> = ({
+  currency,
+  onBtnDisable,
+  isDisabled,
+}) => {
   const { setBaseCurrency } = useContext(BaseCurrenciesContext);
 
-  const handleClick = (e) => {
-    const { innerText } = e.target;
+  const handleClick = (e: React.MouseEvent<HTMLElement>): void => {
+    const button = e.target as HTMLElement;
+    const { innerText } = button;
     setBaseCurrency(innerText);
     onBtnDisable(innerText);
   };

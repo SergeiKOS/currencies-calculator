@@ -11,7 +11,6 @@ interface ICard {
   };
 }
 
-// : React.FC<ICard>
 const Card: React.FC<ICard> = ({ currencyData }) => {
   const { baseCurrency } = useContext(BaseCurrenciesContext);
   const [baseCurrencyUserValue, setBaseCurrencyUserValue] = useState("1");
