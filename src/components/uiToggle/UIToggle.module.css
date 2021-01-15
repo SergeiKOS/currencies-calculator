@@ -21,6 +21,7 @@
 .btn:focus {
   outline: none;
   background-color: #28313e;
+  border-color: #3eb8d8;
 }
 
 .btn:disabled {

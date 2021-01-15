@@ -59,7 +59,7 @@ const Card = ({ currencyData }) => {
           value={targetCurrencyUserValue}
         />
       </form>
-      {<span>Rate: {currencyRate}</span>}
+      {<span className={styles.rate}>Rate: {currencyRate}</span>}
     </div>
   );
 };
