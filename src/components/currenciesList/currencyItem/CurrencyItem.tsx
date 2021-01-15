@@ -1,4 +1,12 @@
-const CurrencyItem = ({ currency, baseCurrencyUserValue }) => {
+interface ICurrencyItem {
+  currency: any;
+  baseCurrencyUserValue: any;
+}
+
+const CurrencyItem: React.FC<ICurrencyItem> = ({
+  currency,
+  baseCurrencyUserValue,
+}) => {
   const currencyRate = currency[1].toFixed(4);
 
   return (
