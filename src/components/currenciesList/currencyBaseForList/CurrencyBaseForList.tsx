@@ -1,7 +1,7 @@
 import Input from "../../input/Input";
 
 interface ICurrencyBaseForList {
-  onBaseChange(): void;
+  onBaseChange(e: React.ChangeEvent<HTMLInputElement>): void;
   baseCurrency: string;
   baseCurrencyUserValue: string;
 }

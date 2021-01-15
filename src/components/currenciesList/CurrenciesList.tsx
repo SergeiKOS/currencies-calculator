@@ -4,12 +4,13 @@ import CurrencyBaseForList from "./currencyBaseForList/CurrencyBaseForList";
 import CurrencyItem from "./currencyItem/CurrencyItem";
 import styles from "./CurrenciesList.module.css";
 
-const CurrenciesList = () => {
+const CurrenciesList: React.FC = () => {
   const { baseCurrency, currencyData } = useContext(BaseCurrenciesContext);
-  const [baseCurrencyUserValue, setBaseCurrencyUserValue] = useState(1);
+  const [baseCurrencyUserValue, setBaseCurrencyUserValue] = useState("1");
 
-  const handleBaseChange = (e) => {
-    setBaseCurrencyUserValue(e.target.value);
+  const handleBaseChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const input = e.target as HTMLInputElement;
+    setBaseCurrencyUserValue(input.value);
   };
 
   return (
@@ -17,7 +18,6 @@ const CurrenciesList = () => {
       <CurrencyBaseForList
         onBaseChange={handleBaseChange}
         baseCurrency={baseCurrency}
-        currencyData={currencyData}
         baseCurrencyUserValue={baseCurrencyUserValue}
       />
       <table>
@@ -27,7 +27,7 @@ const CurrenciesList = () => {
             <th>Sum</th>
             <th>Rate</th>
           </tr>
-          {currencyData.map((currency) => (
+          {currencyData.map((currency: { 0: string; 1: string }) => (
             <tr className={styles.tr} key={currency[0]}>
               <CurrencyItem
                 currency={currency}
