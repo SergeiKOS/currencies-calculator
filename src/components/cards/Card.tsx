@@ -4,36 +4,31 @@ import BaseCurrenciesContext from "../../context/BaseCurrenciesContext";
 import styles from "./Card.module.css";
 import Input from "../input/Input";
 
-// interface ICard {
-//   onAmountChange(e: React.ChangeEvent<HTMLInputElement>): void;
-//   USDCAD: {
-//     USD: string;
-//     CAD: string;
-//     rates: {
-//       USD: string;
-//       CAD: string;
-//     };
-//   };
-// }
+interface ICard {
+  currencyData: {
+    0: string;
+    1: number;
+  };
+}
 
 // : React.FC<ICard>
-const Card = ({ currencyData }) => {
+const Card: React.FC<ICard> = ({ currencyData }) => {
   const { baseCurrency } = useContext(BaseCurrenciesContext);
-  const [baseCurrencyUserValue, setBaseCurrencyUserValue] = useState(1);
+  const [baseCurrencyUserValue, setBaseCurrencyUserValue] = useState("1");
   const [targetCurrencyUserValue, setTargetCurrencyUserValue] = useState(
     currencyData[1].toFixed(4)
   );
 
-  const currencyRate = currencyData[1].toFixed(4);
+  const currencyRate: any = currencyData[1].toFixed(4);
 
-  const handleBaseChange = (e) => {
-    const { value } = e.target;
+  const handleBaseChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value }: any = e.target;
     setBaseCurrencyUserValue(value);
     setTargetCurrencyUserValue((value * currencyRate).toFixed(2));
   };
 
-  const handleTargetChange = (e) => {
-    const { value } = e.target;
+  const handleTargetChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value }: any = e.target;
     setTargetCurrencyUserValue(value);
     setBaseCurrencyUserValue((value / currencyRate).toFixed(2));
   };

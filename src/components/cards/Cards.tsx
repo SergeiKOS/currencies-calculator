@@ -8,7 +8,7 @@ const Cards = () => {
 
   return (
     <div className={styles.cards}>
-      {currencyData.map((currencyData) => (
+      {currencyData.map((currencyData: { 0: string; 1: number }) => (
         <Card currencyData={currencyData} key={currencyData[0]} />
       ))}
     </div>
