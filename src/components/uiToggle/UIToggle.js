@@ -11,8 +11,6 @@ const UIToggle = () => {
     list: false,
   });
 
-  console.log(UI);
-
   const toggleUI = () => {
     if (UI === "grid") {
       setIsDisabled({
