@@ -12,6 +12,7 @@
 }
 @media (min-width: 682px) {
   .cards {
+    padding-left: 0;
     justify-content: space-between;
   }
 }
