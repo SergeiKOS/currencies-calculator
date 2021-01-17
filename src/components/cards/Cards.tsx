@@ -1,9 +1,9 @@
-import { useContext, memo } from "react";
+import { useContext } from "react";
 import BaseCurrenciesContext from "../../context/BaseCurrenciesContext";
 import styles from "./Cards.module.css";
 import Card from "./Card";
 
-const Cards = memo(() => {
+const Cards = () => {
   const { currencyData } = useContext(BaseCurrenciesContext);
 
   return (
@@ -13,6 +13,6 @@ const Cards = memo(() => {
       ))}
     </div>
   );
-});
+};
 
 export default Cards;

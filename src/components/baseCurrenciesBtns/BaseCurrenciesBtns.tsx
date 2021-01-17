@@ -17,7 +17,7 @@ const BaseCurrenciesBtns = () => {
   return (
     <ul className={styles.baseCurrenciesList}>
       {allRates.map((currency: string) => (
-        <li key={currency}>
+        <li className={styles.baseCurrenciesItem} key={currency}>
           <CurrencyBtn
             currency={currency}
             onBtnDisable={handleBtnDisable}

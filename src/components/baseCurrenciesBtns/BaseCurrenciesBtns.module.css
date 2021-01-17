@@ -1,5 +1,20 @@
-.baseCurrenciesList {
-  display: flex;
-  list-style-type: none;
-  gap: 10px;
+@media (max-width: 666px) {
+  .baseCurrenciesList {
+    position: absolute;
+    top: 88px;
+    left: 0;
+  }
+
+  .baseCurrenciesItem {
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 667px) {
+  .baseCurrenciesList {
+    position: relative;
+    display: flex;
+    list-style-type: none;
+    gap: 10px;
+  }
 }
