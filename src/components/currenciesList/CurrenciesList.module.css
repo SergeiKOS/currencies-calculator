@@ -1,8 +1,18 @@
 .currenciesListWrapper {
   padding: 0 20px 0 20px;
-  border-left: 1px solid var(--light-line);
-  border-right: 1px solid var(--light-line);
-  border-bottom: 1px solid var(--light-line);
+  padding-left: 75px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 682px) {
+  .currenciesListWrapper {
+    padding: 0 20px 0 20px;
+    justify-content: space-between;
+    border-left: 1px solid var(--light-line);
+    border-right: 1px solid var(--light-line);
+    border-bottom: 1px solid var(--light-line);
+  }
 }
 
 table {
