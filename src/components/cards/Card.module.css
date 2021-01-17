@@ -1,5 +1,5 @@
 .card {
-  border: 1px solid lightgray;
+  border: 1px solid var(--light-line);
   padding: 10px;
   margin-bottom: 40px;
   border-radius: 10px;
