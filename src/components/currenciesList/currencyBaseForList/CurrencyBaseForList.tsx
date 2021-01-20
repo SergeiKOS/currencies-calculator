@@ -1,10 +1,5 @@
 import Input from "../../input/Input";
-
-interface ICurrencyBaseForList {
-  onBaseChange(e: React.ChangeEvent<HTMLInputElement>): void;
-  baseCurrency: string;
-  baseCurrencyUserValue: string;
-}
+import ICurrencyBaseForList from "./ICurrencyBaseForList.interface";
 
 const CurrencyBaseForList: React.FC<ICurrencyBaseForList> = ({
   onBaseChange,

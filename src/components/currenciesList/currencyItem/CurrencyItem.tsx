@@ -1,7 +1,4 @@
-interface ICurrencyItem {
-  currency: any;
-  baseCurrencyUserValue: any;
-}
+import ICurrencyItem from "./ICurrencyItem.interface";
 
 const CurrencyItem: React.FC<ICurrencyItem> = ({
   currency,

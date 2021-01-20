@@ -1,14 +1,9 @@
 import { useContext } from "react";
+import ICurrencyBtn from "./ICurrencyBtn.interface";
 import BaseCurrenciesContext from "../../context/BaseCurrenciesContext";
 import styles from "./CurrencyBtn.module.css";
 
-interface ICurrency {
-  currency: string;
-  onBtnDisable(title: string): void;
-  isDisabled: boolean;
-}
-
-const CurrencyBtn: React.FC<ICurrency> = ({
+const CurrencyBtn: React.FC<ICurrencyBtn> = ({
   currency,
   onBtnDisable,
   isDisabled,

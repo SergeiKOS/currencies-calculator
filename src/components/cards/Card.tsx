@@ -1,15 +1,9 @@
 import { useEffect, useState } from "react";
 import { useContext } from "react";
+import ICard from "./ICard.interface";
 import BaseCurrenciesContext from "../../context/BaseCurrenciesContext";
 import styles from "./Card.module.css";
 import Input from "../input/Input";
-
-interface ICard {
-  currencyData: {
-    0: string;
-    1: any;
-  };
-}
 
 const Card: React.FC<ICard> = ({ currencyData }) => {
   const { baseCurrency } = useContext(BaseCurrenciesContext);

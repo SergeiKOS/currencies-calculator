@@ -1,11 +1,5 @@
 import styles from "./Input.module.css";
-
-interface IInput {
-  value: string;
-  onChange(e: React.ChangeEvent<HTMLInputElement>): void;
-  id: string;
-  currency: string;
-}
+import IInput from "./IInput.interface";
 
 const Input: React.FC<IInput> = ({ value, onChange, id, currency }) => {
   return (
