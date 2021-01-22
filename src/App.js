@@ -16,16 +16,10 @@ const App = () => {
   const [currencyData, setCurrencyData] = useState([]);
 
   useEffect(() => {
-    const fetchAPI = async () => {
-      let {
-        data: { rates },
-      } = await fetchRates(baseCurrency);
-
-      rates = Object.entries(rates);
-      rates = rates.map((rate) => ({ ...rate }));
-      setCurrencyData(rates);
-    };
-    fetchAPI();
+    fetchRates(baseCurrency).then(({ data: { rates } }) => {
+      rates = Object.entries(rates).map((rate) => ({ ...rate }));
+      return setCurrencyData(rates);
+    });
   }, [baseCurrency]);
 
   const getUI = () => {
