@@ -1,7 +1,7 @@
 import styles from "./Input.module.css";
 import IInput from "./IInput.interface";
 
-const Input: React.FC<IInput> = ({ value, onChange, id, currency }) => {
+const Input = ({ value, onChange, id, currency }: IInput) => {
   return (
     <>
       <p className={styles.inputWrapper}>

@@ -1,9 +1,6 @@
 import ICurrencyItem from "./ICurrencyItem.interface";
 
-const CurrencyItem: React.FC<ICurrencyItem> = ({
-  currency,
-  baseCurrencyUserValue,
-}) => {
+const CurrencyItem = ({ currency, baseCurrencyUserValue }: ICurrencyItem) => {
   const currencyRate = currency[1].toFixed(4);
 
   return (

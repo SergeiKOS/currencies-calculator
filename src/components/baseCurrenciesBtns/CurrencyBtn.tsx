@@ -3,11 +3,7 @@ import ICurrencyBtn from "./ICurrencyBtn.interface";
 import BaseCurrenciesContext from "../../context/BaseCurrenciesContext";
 import styles from "./CurrencyBtn.module.css";
 
-const CurrencyBtn: React.FC<ICurrencyBtn> = ({
-  currency,
-  onBtnDisable,
-  isDisabled,
-}) => {
+const CurrencyBtn = ({ currency, onBtnDisable, isDisabled }: ICurrencyBtn) => {
   const { setBaseCurrency } = useContext(BaseCurrenciesContext);
 
   const handleClick = (e: React.MouseEvent<HTMLElement>): void => {
