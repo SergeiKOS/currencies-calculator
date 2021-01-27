@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import BaseCurrenciesContext from "../../context/BaseCurrenciesContext";
+// @ts-ignore
 import styles from "./BaseCurrenciesBtns.module.css";
 import CurrencyBtn from "./CurrencyBtn";
 

@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import BaseCurrenciesContext from "../../context/BaseCurrenciesContext";
 import CurrencyBaseForList from "./currencyBaseForList/CurrencyBaseForList";
 import CurrencyItem from "./currencyItem/CurrencyItem";
+// @ts-ignore
 import styles from "./CurrenciesList.module.css";
 
 const CurrenciesList = () => {

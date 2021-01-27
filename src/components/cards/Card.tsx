@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useContext } from "react";
 import ICard from "./ICard.interface";
 import BaseCurrenciesContext from "../../context/BaseCurrenciesContext";
+// @ts-ignore
 import styles from "./Card.module.css";
 import Input from "../input/Input";
 

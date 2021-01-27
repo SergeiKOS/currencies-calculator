@@ -1,3 +1,4 @@
+// @ts-ignore
 import styles from "./Input.module.css";
 import IInput from "./IInput.interface";
 
