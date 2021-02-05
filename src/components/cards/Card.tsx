@@ -17,7 +17,7 @@ const Card = ({ currencyData }: ICard) => {
     setTargetCurrencyUserValue(
       (baseCurrencyUserValue * currencyRate).toFixed(2)
     );
-  }, [currencyData]);
+  }, [currencyData]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const currencyRate: any = currencyData[1].toFixed(4);
 
