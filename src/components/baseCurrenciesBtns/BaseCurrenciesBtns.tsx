@@ -11,7 +11,7 @@ const BaseCurrenciesBtns = () => {
     disabled: false,
   });
 
-  const handleBtnDisable = (currency: string) => {
+  const handleBtnDisable = (currency: string): void => {
     setIsDisabled({ currency, disabled: true });
   };
 

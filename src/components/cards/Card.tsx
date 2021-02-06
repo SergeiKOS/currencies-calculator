@@ -21,13 +21,13 @@ const Card = ({ currencyData }: ICard) => {
 
   const currencyRate: any = currencyData[1].toFixed(4);
 
-  const handleBaseChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleBaseChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const { value }: any = e.target;
     setBaseCurrencyUserValue(value);
     setTargetCurrencyUserValue((value * currencyRate).toFixed(2));
   };
 
-  const handleTargetChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleTargetChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const { value }: any = e.target;
     setTargetCurrencyUserValue(value);
     setBaseCurrencyUserValue((value / currencyRate).toFixed(2));

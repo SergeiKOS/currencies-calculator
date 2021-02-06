@@ -9,7 +9,7 @@ const CurrenciesList = () => {
   const { baseCurrency, currencyData } = useContext(BaseCurrenciesContext);
   const [baseCurrencyUserValue, setBaseCurrencyUserValue] = useState("1");
 
-  const handleBaseChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleBaseChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const input = e.target as HTMLInputElement;
     setBaseCurrencyUserValue(input.value);
   };

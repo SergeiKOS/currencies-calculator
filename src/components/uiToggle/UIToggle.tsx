@@ -12,7 +12,7 @@ const UIToggle = () => {
     list: false,
   });
 
-  const toggleUI = () => {
+  const toggleUI = (): void => {
     if (UI === "grid") {
       setIsDisabled({
         grid: false,
