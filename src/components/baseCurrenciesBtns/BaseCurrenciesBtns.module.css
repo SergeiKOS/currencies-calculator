@@ -1,4 +1,4 @@
-@media (max-width: 666px) {
+@media (max-width: 709px) {
   .baseCurrenciesList {
     position: absolute;
     top: 90px;
@@ -10,7 +10,7 @@
   }
 }
 
-@media (min-width: 667px) {
+@media (min-width: 710px) {
   .baseCurrenciesList {
     position: relative;
     display: flex;

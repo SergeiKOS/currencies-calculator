@@ -8,6 +8,8 @@ import BaseCurrenciesBtns from "./components/baseCurrenciesBtns/BaseCurrenciesBt
 import styles from "./App.module.css";
 import "./globalStyles/scaffolding.css";
 import "./globalStyles/variables.css";
+import { RiExchangeBoxLine } from "react-icons/ri";
+import SvgIcon from "./components/SvgIcon";
 
 const App = () => {
   const [baseCurrency, setBaseCurrency] = useState("USD");
@@ -40,6 +42,9 @@ const App = () => {
       }}
     >
       <header className={`container ${styles.header}`}>
+        <SvgIcon color="#d3d3d3" size="48px">
+          <RiExchangeBoxLine />
+        </SvgIcon>
         <BaseCurrenciesBtns />
         <UIToggle />
       </header>

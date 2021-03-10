@@ -4,7 +4,7 @@
   margin-right: auto;
 }
 
-@media (min-width: 682px) {
+@media (min-width: 710px) {
   .currenciesListWrapper {
     padding: 0 20px 0 20px;
     justify-content: space-between;
